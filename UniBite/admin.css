@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root {
+  --butter: #FFEDAB;
+  --cherry: #75070C;
+  --olive: #4F6815;
+  --oat: #F0E6DA;
+  --matcha: #BAD797; 
+  --text-dark: #222222;
+  --white: #ffffff;
+  --gold: #F4C542;
+  --gold-hover: #FFD700;
+}
+
+header {
+  background-color: var(--butter);
+  color: var(--cherry);
+  height: 175px;
+  text-align: center;
+  padding: 20px 20px;
+  border-bottom: 6px solid var(--olive);
+}
+
+.admin-menu header h1 {
+  margin: 0;
+  font-family: "Atma", cursive; 
+  font-size: 52px;
+  font-weight: 300;
+}
+
+.admin-menu header p {
+  margin: 4px 0 0;
+  color: var(--olive);
+  font-size: 18px;
+}
+body{
+  font-family: Calibri, Arial, sans-serif;
+  font-size: 10pt;
+  text-align:center;
+}
+.admin-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: var(--olive);
+   position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.admin-menu ul::after {
+  content: "";
+  display: table;
+  clear: both; /* Καθαρισμός των floats για να διατηρεί το ul το ύψος του */
+}
+
+.admin-menu ul li {
+  float: left;
+  position: relative;
+}
+
+.admin-menu ul li a {
+  display: block;
+  color: var(--gold-hover);
+  text-align: center;
+  padding: 24px 16px; /* Ίδιο padding παντού για απόλυτη ευθυγράμμιση */
+  text-decoration: none;
+  font-size: 14px;
+  font-family: inherit;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+/* Hover εφέ για τα βασικά στοιχεία του μενού */
+.admin-menu ul li a:hover, .dropdown:hover .dropbtn {
+  background-color: rgba(0, 0, 0, 0.2); /* Διακριτικό σκούρο φόντο στο hover */
+  color: var(--white);
+}
+
+/* προσαρμοστικότητά του σε διαφορετικές αναλύσεις συσκευών */
+@media(max-width: 1100px){
+    .wrapper{
+      width:min(600px,100%);
+    }
+}

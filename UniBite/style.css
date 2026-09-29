@@ -1,0 +1,563 @@
+* {
+  box-sizing: border-box;
+}
+
+/* ΧΡΩΜΑΤΙΚΗ ΠΑΛΕΤΑ */
+
+:root {
+  --butter: #FFEDAB;
+  --cherry: #75070C;
+  --olive: #4F6815;
+  --oat: #F0E6DA;
+  --matcha: #BAD797; 
+  --text-dark: #222222;
+  --white: #ffffff;
+  --gold: #F4C542;
+  --gold-hover: #FFD700;
+}
+
+/* ΓΕΝΙΚΟ ΣΤΥΛ ΣΕΛΙΔΑΣ */
+body {
+  margin: 0;
+  font-family: Calibri, Arial, sans-serif;
+  background-color: var(--oat);
+  color: var(--text-dark);
+}
+
+header {
+  background-color: var(--butter);
+  color: var(--cherry);
+  text-align: center;
+  padding: 28px 20px;
+  border-bottom: 6px solid var(--olive);
+}
+
+header h1 {
+  margin: 0;
+  font-family: "Atma", cursive;
+  font-size: 52px;
+  font-weight: 300;
+}
+
+header p {
+  margin: 4px 0 0;
+  color: var(--olive);
+  font-size: 18px;
+}
+
+main {
+  padding: 28px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: var(--cherry);
+  font-size: 28px;
+}
+
+.food-feed {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/*ΕΜΦΑΝΙΣΗ ΚΑΡΤΩΝ ΦΑΓΗΤΟΥ*/
+
+.feed-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--cherry);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.food-card {
+  background-color: var(--white);
+  border: 5px solid var(--olive);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(117, 7, 12, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(117, 7, 12, 0.28);
+}
+
+.food-card h3 {
+  color: var(--cherry);
+  margin-top: 0;
+}
+
+.food-card p {
+  line-height: 1.5;
+}
+
+.food-card.inactive {
+  opacity: 0.55;
+  filter: grayscale(1);
+}
+
+.food-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+
+  border-radius: 14px;
+  border: 3px solid var(--olive);
+
+  margin-bottom: 14px;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.status-badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: bold;
+
+  white-space: nowrap;
+}
+
+.status-badge.available {
+  background-color: var(--butter);
+  color: var(--olive);
+  border: 2px solid var(--olive);
+}
+
+.status-badge.sold-out {
+  background-color: var(--cherry);
+  color: white;
+}
+
+.allergen-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin: 12px 0;
+}
+
+.allergen-badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+
+  background-color: var(--butter);
+  color: var(--cherry);
+
+  border: 1px solid var(--cherry);
+
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.no-allergen {
+  color: var(--olive);
+  border-color: var(--olive);
+}
+
+.reserve-btn {
+  margin-top: 14px;
+  width: 100%;
+  padding: 12px;
+
+  border: none;
+  border-radius: 12px;
+
+  background-color: var(--cherry);
+  color: white;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  font-family: Calibri, Arial, sans-serif;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.reserve-btn:hover {
+  background-color: var(--olive);
+  transform: scale(1.02);
+}
+
+.reserve-btn:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.stars {
+  margin-top: 14px;
+  font-size: 30px;
+  color: var(--gold);
+  text-align: center;
+}
+
+.stars span {
+  margin: 0 2px;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.stars span:hover {
+  color: var(--gold-hover);
+  transform: scale(1.2);
+}
+
+nav {
+  margin-top: 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+nav a {
+  display: inline-block;
+
+  color: var(--cherry);
+  text-decoration: none;
+  font-weight: bold;
+
+  padding: 8px 14px;
+
+  border: 2px solid var(--olive);
+  border-radius: 12px;
+
+  background-color: var(--oat);
+
+  transition: all 0.2s ease;
+}
+
+.logout-btn {
+  margin-left: auto;
+
+  background-color: var(--cherry) !important;
+  color: white !important;
+
+  border-color: var(--cherry) !important;
+}
+
+.logout-btn:hover {
+  background-color: var(--olive) !important;
+}
+
+nav a:hover {
+  background-color: var(--olive);
+  color: var(--white);
+}
+
+#food-form {
+  max-width: 760px;
+  margin: 0 auto 40px;
+
+  background-color: var(--white);
+  border: 5px solid var(--olive);
+  border-radius: 22px;
+
+  padding: 28px;
+  box-shadow: 0 8px 22px rgba(117, 7, 12, 0.18);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 20px;
+}
+
+#food-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  color: var(--cherry);
+  font-weight: bold;
+}
+
+#food-form input,
+#food-form textarea {
+  width: 100%;
+  padding: 12px;
+
+  border: 2px solid var(--olive);
+  border-radius: 12px;
+
+  font-family: Calibri, Arial, sans-serif;
+  font-size: 16px;
+  background-color: var(--oat);
+}
+
+#food-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+#food-form button {
+  grid-column: 1 / -1;
+}
+
+/* RESPONSIVE DESIGN*/
+@media (max-width: 900px) {
+  .food-feed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #food-form {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 42px;
+  }
+
+  header p {
+    font-size: 16px;
+  }
+
+  main {
+    padding: 18px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .food-feed {
+    grid-template-columns: 1fr;
+  }
+
+  #food-form {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .reserve-btn {
+    font-size: 15px;
+  }
+}
+
+/*LOGIN & SIGNUP*/
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--oat);
+  padding: 24px;
+}
+
+.auth-title {
+  margin: -10px 0 10px;
+  text-align: center;
+
+  color: var(--cherry);
+  font-size: 28px;
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 430px;
+  background-color: var(--butter);
+  border: 5px solid var(--olive);
+  border-radius: 22px;
+  padding: 32px;
+  box-shadow: 0 8px 22px rgba(117, 7, 12, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-logo {
+  margin: 0 0 12px;
+  text-align: center;
+
+  font-family: "Atma", cursive;
+  font-size: 56px;
+  font-weight: 300;
+
+  color: var(--cherry);
+}
+
+.auth-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  color: var(--cherry);
+  font-weight: bold;
+}
+
+.auth-form input {
+  padding: 12px;
+
+  border: 2px solid var(--olive);
+  border-radius: 12px;
+
+  font-family: Calibri, Arial, sans-serif;
+  font-size: 16px;
+
+  background-color: var(--oat);
+}
+
+.auth-btn {
+  width: fit-content;
+  align-self: center;
+
+  margin-top: 10px;
+  padding: 12px 42px;
+
+  border: none;
+  border-radius: 12px;
+
+  background-color: var(--cherry);
+  color: white;
+
+  font-family: Calibri, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.auth-btn:hover {
+  background-color: var(--olive);
+  transform: scale(1.03);
+}
+
+.auth-link {
+  text-align: center;
+  margin: 10px 0 0;
+}
+
+.auth-link a {
+  color: var(--cherry);
+  font-weight: bold;
+}
+
+.auth-link a:hover {
+  color: var(--olive);
+}
+
+.error-message {
+  margin: 0;
+  padding: 10px 12px;
+
+  background-color: #ffe1e1;
+  color: var(--cherry);
+
+  border: 2px solid var(--cherry);
+  border-radius: 10px;
+
+  font-weight: bold;
+  text-align: center;
+}
+
+/*ΟΘΟΝΗ ΓΙΑ ΕΠΕΞΕΡΓΑΣΙΑ ΑΓΓΕΛΙΑΣ*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 650px;
+
+  background-color: var(--butter);
+  border: 5px solid var(--olive);
+  border-radius: 22px;
+
+  padding: 28px;
+  box-shadow: 0 8px 22px rgba(117, 7, 12, 0.25);
+}
+
+#edit-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 20px;
+}
+
+#edit-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  color: var(--cherry);
+  font-weight: bold;
+}
+
+#edit-form input,
+#edit-form textarea {
+  width: 100%;
+  padding: 12px;
+
+  border: 2px solid var(--olive);
+  border-radius: 12px;
+
+  font-family: Calibri, Arial, sans-serif;
+  font-size: 16px;
+
+  background-color: var(--oat);
+}
+
+#edit-form textarea {
+  resize: vertical;
+}
+
+#edit-form button {
+  grid-column: 1 / -1;
+}
+
+
+/*αλλαγή στη μορφοποίηση των κουμπιών*/
+.action-positive {
+  background-color: var(--olive) !important;
+  color: white;
+}
+
+.action-positive:hover {
+  background-color: #4a6518;
+}
+
+.action-negative {
+  background-color: var(--cherry) !important;
+  color: white;
+}
+
+.action-negative:hover {
+  background-color: #75070c;
+}
+
+@media (max-width: 600px) {
+  #edit-form {
+    grid-template-columns: 1fr;
+  }
+}

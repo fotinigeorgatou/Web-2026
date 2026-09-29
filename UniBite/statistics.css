@@ -1,0 +1,67 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+:root {
+  --butter: #FFEDAB;
+  --cherry: #75070C;
+  --olive: #4F6815;
+  --oat: #F0E6DA;
+  --matcha: #BAD797; 
+  --text-dark: #222222;
+  --white: #ffffff;
+  --gold: #F4C542;
+  --gold-hover: #FFD700;
+}
+html{
+  font-family: Calibri, Arial, sans-serif;
+  font-size: 10pt;
+  text-align:center;
+  background-color: var(--oat);
+}
+
+h1{
+    color: var(--cherry);
+    font-weight: 600;
+    margin: 50px auto 25px auto;
+}
+
+.kpi-container {
+    max-width: 300px;
+    margin: 50px auto 50px auto;
+    text-align: center;
+    background-color: var(--white);
+    border: 5px solid var(--olive);
+    border-radius: 18px;
+    overflow: hidden;
+    padding: 50px;
+}
+
+.kpi-text {
+    display: inline-block;
+    text-align: center;
+    font-size: 15pt;
+    color: var(--text-dark);
+}
+
+.kpi-number {
+    font-weight: bold;
+    font-size: 25px;
+    color: var(--cherry); 
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+
+.kpi-unit {
+    margin-left: 3px;
+    font-weight: bold;
+    margin-bottom: 2cqi;
+}
+
+/* προσαρμοστικότητά του σε διαφορετικές αναλύσεις συσκευών */
+@media(max-width: 1100px){
+    .wrapper{
+        width:min(600px,100%);
+    }
+}

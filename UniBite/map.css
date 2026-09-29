@@ -1,0 +1,110 @@
+:root {
+  --butter: #FFEDAB;
+  --cherry: #75070C;
+  --olive: #4F6815;
+  --oat: #F0E6DA;
+  --matcha: #BAD797; 
+  --text-dark: #222222;
+  --white: #ffffff;
+  --gold: #F4C542;
+  --gold-hover: #FFD700;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: Calibri, Arial, sans-serif;
+    margin: 0;
+    background-color: var(--oat);
+    color: var(--text-dark);
+}
+#map {
+    height: 500px;
+    width: 100%;
+    margin-top: 20px;
+}
+label{
+    color: var(--olive);
+}
+input{
+    width: 50%; 
+}
+
+h2{
+    color:#75070C;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+h3{
+    color: var(--olive);
+    font-weight: 600;
+    margin: 5px auto 10px auto;
+}
+.food-list{
+    background-color: var(--white);
+    border: 5px solid var(--olive);
+    border-radius: 18px; 
+    margin: 10px 10px 0 10px;
+    max-width: 400px;
+    padding: 30px;
+}
+.food-list ul{
+    color: var(--cherry);
+    list-style-position: inside !important;
+    text-align: left;
+}
+.search-container{
+    background-color: var(--matcha);
+    border: 5px solid var(--olive);
+    border-radius: 18px; 
+    margin: 10px 10px 0 10px;
+    padding: 20px;
+}
+
+.search_engine input {
+  padding: 12px;
+
+  border: 2px solid var(--olive);
+  border-radius: 12px;
+
+  font-family: Calibri, Arial, sans-serif;
+  font-size: 16px;
+
+  background-color: var(--oat);
+}
+.search_engine label{
+    font-weight: bold;
+}
+.search-btn {
+  width: fit-content;
+  align-self: center;
+
+  margin-top: 10px;
+  padding: 12px 42px;
+
+  border: none;
+  border-radius: 12px;
+
+  background-color: var(--cherry);
+  color: white;
+
+  font-family: Calibri, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.search-btn:hover {
+  background-color: var(--olive);
+  transform: scale(1.03);
+}
+@media(max-width: 1100px){
+    .wrapper{
+        width:min(600px,100%);
+    }
+}
